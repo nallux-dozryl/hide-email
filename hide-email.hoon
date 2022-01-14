@@ -25,4 +25,3 @@
   |=  [message=tape]     
   u:[+3:(find "@" message)]                                       
 --
-
