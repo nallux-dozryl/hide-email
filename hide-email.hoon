@@ -4,13 +4,14 @@
 =<  (complete email)
 |%
 ++  complete
-  |=  [email=tape]
+  |=  email=tape
   (weld (masked (scag (pat-check email) email)) "@[domain]")
 ++  masked
-  |=  [email=tape]
-  =+  [count=0 final=""]
+  |=  email=tape
+  =|  [count=@ud final=tape]
+  =/  email-length  (lent email)
   |-  ^+  final
-  ?:  =(count (lent email))  final
+  ?:  =(count email-length)  final
   %=  $
     final
       (weld final (censor (trip (snag count email)) count))
@@ -23,5 +24,5 @@
   letter
 ++  pat-check                                                       
   |=  [message=tape]     
-  u:[+3:(find "@" message)]                                       
+  (need (find "@" message))                                   
 --
